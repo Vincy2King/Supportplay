@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- 引入css文件 -->
+        <link rel="stylesheet" href="static/assets/css/login.css">
+        <!-- 引入jquery -->
+        <script src="static/assets/js/jquery-latest.js"></script>
+        <title>SupportPlay Login</title>
+    </head>
+    <body>
+        <!-- 最外层的大盒子 -->
+       <div class="box">
+        <!-- 滑动盒子 -->
+        <div class="pre-box">
+            <h1>SupportPlay</h1>
+<!--            <p>JOIN US!</p>-->
+            <div class="img-box">
+                <img src="static/assets/img/logo2.png" alt="">
+            </div>
+        </div>
+        <!-- 注册盒子 -->
+<!--           <form action="/" method="POST">-->
+        <div class="register-form">
+            <!-- 标题盒子 -->
+            <div class="title-box">
+                <h1>注册</h1>
+            </div>
+            <!-- 输入框盒子 -->
+            <div class="input-box">
+<!--                <input type="text" id="name" name="name" placeholder="Name">-->
+<!--                <input type="text" id="age" name="age"  placeholder="Age">-->
+<!--                <input type="text" id="sex" name="sex"  placeholder="Sex">-->
+<!--                <input type="text" id="education" name="education"  placeholder="Education">-->
+<!--                <input type="text" id="hobby" name="hobby"  placeholder="Hobby">-->
+            </div>
+            <!-- 按钮盒子 -->
+<!--            <div class="btn-box">-->
+<!--                <button>注册</button>-->
+<!--                &lt;!&ndash; 绑定点击事件 &ndash;&gt;-->
+<!--                <p onclick="mySwitch()">已有账号?去登录</p>-->
+<!--            </div>-->
+        </div>
+        <!-- 登录盒子 -->
+
+        <div class="login-form">
+            <form action="/" method="POST">
+            <!-- 标题盒子 -->
+            <div class="title-box" style="margin-top: -200px">
+                <h1>Login</h1>
+            </div>
+            <!-- 输入框盒子 -->
+            <div class="input-box">
+                <input type="text" id="name" name="name" placeholder="Name" style="height:30px">
+                <input type="text" id="nickname" name="nickname" placeholder="Nickname" style="height:30px">
+                <input type="text" id="age" name="age"  placeholder="Age" style="height:30px">
+                <input type="text" id="sex" name="sex"  placeholder="Sex" style="height:30px">
+                <input type="text" id="education" name="education"  placeholder="Education" style="height:30px">
+                <input type="text" id="hobby" name="hobby"  placeholder="Hobby" style="height:30px">
+                <input type="text" id="occupation" name="occupation" placeholder="Occupation" style="height:30px">
+                <input type="text" id="appearance" name="appearance" placeholder="Appearance" style="height:30px">
+            </div>
+            <!-- 按钮盒子 -->
+            <div class="btn-box">
+                <button>Login</button>
+                <!-- 绑定点击事件 -->
+<!--                <p onclick="mySwitch()">没有账号?去注册</p>-->
+            </div>
+                 </form>
+        </div>
+
+       </div>
+       <script>
+            // 滑动的状态
+             let flag=true
+             const mySwitch=()=>{
+                if(flag){
+                    // 获取到滑动盒子的dom元素并修改它移动的位置
+                    $(".pre-box").css("transform","translateX(100%)")
+                    // 获取到滑动盒子的dom元素并修改它的背景颜色
+                    $(".pre-box").css("background-color","#c9e0ed")
+                    //修改图片的路径
+                    $("img").attr("src","static/assets/img/logo.png")
+                    
+                }
+                else {
+                    $(".pre-box").css("transform","translateX(0%)")
+                    $(".pre-box").css("background-color","#edd4dc")
+                    $("img").attr("src","static/assets/img/logo.png")
+                }
+                flag=!flag
+             }
+       </script>
+       <script>
+            const bubleCreate=()=>{
+                // 获取body元素
+                const body = document.body
+                // 创建泡泡元素
+                const buble = document.createElement('span')
+                // 设置泡泡半径
+                let r = Math.random()*5 + 25 //半径大小为25~30
+                // 设置泡泡的宽高
+                buble.style.width=r+'px'
+                buble.style.height=r+'px'
+                // 设置泡泡的随机起点
+                buble.style.left=Math.random()*innerWidth+'px'
+                // 为body添加buble元素
+                body.append(buble)
+                // 4s清除一次泡泡
+                setTimeout(()=>{
+                    buble.remove()
+                },4000)
+            }
+            // 每200ms生成一个泡泡
+            setInterval(() => {
+                bubleCreate()
+            }, 200);
+        </script>
+    </body>
+</html>
